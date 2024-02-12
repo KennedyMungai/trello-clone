@@ -1,5 +1,5 @@
 const MarketingPage = () => {
-	return <div>MarketingPage</div>
+	return <div>Marketing Page</div>
 }
 
 export default MarketingPage
