@@ -1,5 +1,5 @@
-export default function Home() {
-  return (
-    <main>Hello Trello</main>
-  )
+const MarketingPage = () => {
+	return <div>MarketingPage</div>
 }
+
+export default MarketingPage
