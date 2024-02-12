@@ -1,5 +1,9 @@
 const MarketingPage = () => {
-	return <div>Marketing Page</div>
+	return (
+		<div className='flex items-center justify-center flex-col'>
+			Marketing Page
+		</div>
+	)
 }
 
 export default MarketingPage
