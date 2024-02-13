@@ -1,11 +1,13 @@
 'use client'
 
+import { Accordion } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOrganization, useOrganizationList } from '@clerk/nextjs'
 import { Plus } from 'lucide-react'
 import Link from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
+import NavItem from './nav-item'
 
 type Props = {
 	storageKey?: string
@@ -68,6 +70,21 @@ const SideBar = ({ storageKey = 't-sidebar-state' }: Props) => {
 					</Link>
 				</Button>
 			</div>
+			<Accordion
+				type='multiple'
+				defaultValue={defaultAccordionValue}
+				className='space-y-2'
+			>
+				{userMemberships.data.map(({ organization }, index) => (
+					<NavItem
+						key={index}
+						isActive={activeOrganization?.id === organization.id}
+						isExpanded={expanded[organization.id]}
+						organization={organization}
+						onExpand={onExpand}
+					/>
+				))}
+			</Accordion>
 		</>
 	)
 }
