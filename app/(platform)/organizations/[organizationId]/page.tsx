@@ -7,7 +7,7 @@ type Props = {
 }
 
 const OrganizationPage = ({ params: { organizationId } }: Props) => {
-	return <div>{organizationId}</div>
+	return <div className='h-full'>{organizationId}</div>
 }
 
 export default OrganizationPage
