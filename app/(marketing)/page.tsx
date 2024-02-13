@@ -24,7 +24,7 @@ const MarketingPage = () => {
 			</div>
 			<TooltipTemplate message={'Get Trello Clone For Free'}>
 				<Button>
-					<Link href='/'>Something</Link>
+					<Link href='/sign-up'>Something</Link>
 				</Button>
 			</TooltipTemplate>
 		</div>
