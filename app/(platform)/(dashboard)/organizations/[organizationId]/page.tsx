@@ -1,4 +1,4 @@
-import { auth } from '@clerk/nextjs'
+import { OrganizationSwitcher, auth } from '@clerk/nextjs'
 
 type Props = {
 	params: {
@@ -11,8 +11,7 @@ const OrganizationPage = ({ params: { organizationId } }: Props) => {
 
 	return (
 		<div className='h-full'>
-			<p>Organization: {orgId}</p>
-			<p>User: {userId}</p>
+			<OrganizationSwitcher />
 		</div>
 	)
 }
