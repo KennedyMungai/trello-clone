@@ -1,7 +1,10 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOrganization, useOrganizationList } from '@clerk/nextjs'
+import { Plus } from 'lucide-react'
+import Link from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
 
 type Props = {
@@ -49,7 +52,24 @@ const SideBar = ({ storageKey = 't-sidebar-state' }: Props) => {
 		)
 	}
 
-	return <div>SideBar</div>
+	return (
+		<>
+			<div className='font-medium text-xs flex items-center mb-1'>
+				<span className='pl-4'>Workspaces</span>
+				<Button
+					asChild
+					type='button'
+					size={'icon'}
+					variant={'ghost'}
+					className='ml-auto'
+				>
+					<Link href={'/select-org'}>
+						<Plus className='h-4 w-4' />
+					</Link>
+				</Button>
+			</div>
+		</>
+	)
 }
 
 export default SideBar
