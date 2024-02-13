@@ -13,7 +13,7 @@ const TrelloCloneLogo = (props: Props) => {
 					height={30}
 					width={30}
 				/>
-				<p className='text-lg text-neutral-700 pb-1'>Trello Clone</p>
+				<p className='text-xl text-neutral-700 pb-1 uppercase font-semibold'>Trello Clone</p>
 			</div>
 		</Link>
 	)
