@@ -11,7 +11,8 @@
 			"nextjs",
 			"tailwindcss",
 			"trpc",
-			"usehooks"
+			"usehooks",
+			"zustand"
 		]
 	}
 }
