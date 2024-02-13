@@ -1,11 +1,12 @@
-import React, { ReactNode } from 'react'
+import { ClerkProvider } from '@clerk/nextjs'
+import { ReactNode } from 'react'
 
 type Props = {
 	children: ReactNode
 }
 
 const PlatformLayout = ({ children }: Props) => {
-	return <div>{children}</div>
+	return <ClerkProvider>{children}</ClerkProvider>
 }
 
 export default PlatformLayout
