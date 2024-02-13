@@ -15,6 +15,10 @@ const MobileSidebar = (props: Props) => {
 		setIsMounted(true)
 	}, [])
 
+	useEffect(() => {
+		onClose()
+	}, [pathname, onClose])
+
 	if (!isMounted) {
 		return null
 	}
