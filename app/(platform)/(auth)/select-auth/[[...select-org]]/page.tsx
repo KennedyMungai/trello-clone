@@ -1,8 +1,9 @@
+import { OrganizationList } from '@clerk/nextjs'
 
 type Props = {}
 
-const SelectOrganizationPage = (props: Props) => {
-	return <div>SelectOrganizationPage</div>
+const CreateOrganizationPage = (props: Props) => {
+	return <OrganizationList />
 }
 
-export default SelectOrganizationPage
+export default CreateOrganizationPage
