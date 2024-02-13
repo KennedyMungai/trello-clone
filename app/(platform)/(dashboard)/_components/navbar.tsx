@@ -1,4 +1,6 @@
 import Logo from '@/components/logo/logo'
+import { Button } from '@/components/ui/button'
+import { Plus } from 'lucide-react'
 
 type Props = {}
 
@@ -10,6 +12,15 @@ const DashboardNavbar = (props: Props) => {
 					<Logo />
 				</div>
 			</div>
+			<Button
+				size={'sm'}
+				className='rounded-sm hidden md:block h-auto py-1.5 px-2 mx-5'
+			>
+				Create
+			</Button>
+			<Button size={'sm'} className='rounded-sm block md:hidden'>
+				<Plus />
+			</Button>
 		</nav>
 	)
 }
