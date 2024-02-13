@@ -18,7 +18,7 @@ const OrgControl = (props: Props) => {
 		})
 	}, [setActive, params.organizationId])
 
-	return <div>OrgControl</div>
+	return null
 }
 
 export default OrgControl
