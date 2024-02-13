@@ -23,7 +23,12 @@ const DashboardNavbar = (props: Props) => {
 				</Button>
 			</div>
 			<div className='ml-auto flex items-center gap-x-2'>
-				<OrganizationSwitcher />
+				<OrganizationSwitcher 
+                    hidePersonal
+                    afterCreateOrganizationUrl={'/organizations/:id'}
+                    afterLeaveOrganizationUrl={'/select-org'}
+                    afterSelectOrganizationUrl={'/organizations/:id'}
+                />
 			</div>
 		</nav>
 	)
