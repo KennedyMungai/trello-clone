@@ -3,7 +3,7 @@ import { OrganizationList } from '@clerk/nextjs'
 type Props = {}
 
 const CreateOrganizationPage = (props: Props) => {
-	return <OrganizationList />
+	return <OrganizationList hidePersonal />
 }
 
 export default CreateOrganizationPage
