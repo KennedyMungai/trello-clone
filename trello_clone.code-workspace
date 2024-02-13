@@ -7,7 +7,9 @@
 	"settings": {
 		"cSpell.words": [
 			"clsx",
-			"lucide"
+			"lucide",
+			"nextjs",
+			"trpc"
 		]
 	}
 }
