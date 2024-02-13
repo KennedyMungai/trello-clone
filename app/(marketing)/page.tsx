@@ -1,12 +1,4 @@
 import { Button } from '@/components/ui/button'
-import { Popover } from '@/components/ui/popover'
-import {
-	Tooltip,
-	TooltipProvider,
-	TooltipTrigger
-} from '@/components/ui/tooltip'
-import { PopoverContent, PopoverTrigger } from '@radix-ui/react-popover'
-import { TooltipContent } from '@radix-ui/react-tooltip'
 import { Link, Medal } from 'lucide-react'
 import TooltipTemplate from '../../components/hover/Tooltip'
 
@@ -30,9 +22,9 @@ const MarketingPage = () => {
 				From high rises to the home office, the way your team works is
 				unique - accomplish it all with Trello Clone
 			</div>
-			<TooltipTemplate message={'Get Trello Clone for Free'}>
-				<Button asChild>
-					<Link href='/sign-up'>Get Trello Clone For Free</Link>
+			<TooltipTemplate message={'Get Trello Clone For Free'}>
+				<Button>
+					<Link href='/'>Something</Link>
 				</Button>
 			</TooltipTemplate>
 		</div>
