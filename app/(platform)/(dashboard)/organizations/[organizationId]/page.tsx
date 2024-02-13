@@ -1,4 +1,4 @@
-import React from 'react'
+import { auth } from '@clerk/nextjs'
 
 type Props = {
 	params: {
@@ -7,7 +7,14 @@ type Props = {
 }
 
 const OrganizationPage = ({ params: { organizationId } }: Props) => {
-	return <div className='h-full'>{organizationId}</div>
+	const { userId, orgId } = auth()
+
+	return (
+		<div className='h-full'>
+			<p>Organization: {orgId}</p>
+			<p>User: {userId}</p>
+		</div>
+	)
 }
 
 export default OrganizationPage
