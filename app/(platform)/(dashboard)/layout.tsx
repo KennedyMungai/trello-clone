@@ -7,7 +7,7 @@ type Props = {
 
 const DashboardLayout = ({ children }: Props) => {
 	return (
-		<div className='h-full'>
+		<div className='h-full pt-14'>
 			<DashboardNavbar />
 			{children}
 		</div>
