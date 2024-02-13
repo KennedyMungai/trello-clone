@@ -13,8 +13,8 @@ const NavBar = (props: Props) => {
 					<Button size={'sm'} variant={'outline'}>
 						<Link href='/sign-in'>Login</Link>
 					</Button>
-					<Button size={'sm'}>
-						Get Trello Clone for Free
+					<Button size={'sm'} asChild>
+						<Link href={'/sign-up'}>Get Trello Clone for Free</Link>
 					</Button>
 				</div>
 			</div>
