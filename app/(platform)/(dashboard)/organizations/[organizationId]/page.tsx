@@ -11,7 +11,7 @@ const OrganizationPage = ({ params: { organizationId } }: Props) => {
 
 	return (
 		<div className='h-full'>
-			<OrganizationSwitcher />
+			<OrganizationSwitcher hidePersonal />
 		</div>
 	)
 }
