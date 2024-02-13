@@ -6,10 +6,12 @@ type Props = {
 }
 
 const IndividualOrganizationLayout = ({ children }: Props) => {
-	return <>
-        <OrgControl />
-    {children}
-</>
+	return (
+		<>
+			<OrgControl />
+			{children}
+		</>
+	)
 }
 
 export default IndividualOrganizationLayout
