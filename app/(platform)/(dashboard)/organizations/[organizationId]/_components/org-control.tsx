@@ -1,3 +1,5 @@
+'use client'
+
 type Props = {}
 
 const OrgControl = (props: Props) => {
