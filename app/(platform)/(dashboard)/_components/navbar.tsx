@@ -14,11 +14,16 @@ const DashboardNavbar = (props: Props) => {
 				</div>
 				<Button
 					size={'sm'}
+					variant={'primary'}
 					className='rounded-sm hidden md:block h-auto py-1.5 px-2 mx-5'
 				>
 					Create
 				</Button>
-				<Button size={'sm'} className='rounded-sm block md:hidden'>
+				<Button
+					size={'sm'}
+					variant={'primary'}
+					className='rounded-sm block md:hidden'
+				>
 					<Plus className='h-4 w-4' />
 				</Button>
 			</div>
