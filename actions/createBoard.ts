@@ -19,5 +19,5 @@ export async function create(formData: FormData) {
 		}
 	})
 
-    revalidatePath('http://localhost:3000/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
+    revalidatePath('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
 }
