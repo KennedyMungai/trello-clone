@@ -1,9 +1,11 @@
 'use client'
 
-import { State, create } from '@/actions/createBoard'
+import { State, create } from '@/actions/create-board'
 import { Button } from '@/components/ui/button'
+import { createSafeAction } from '@/lib/create-safe-action'
 import { useFormState } from 'react-dom'
 import FormInput from './form-input'
+import { CreateBoard } from '@/actions/create-board/schema'
 
 type Props = {}
 
@@ -24,3 +26,6 @@ const Form = (props: Props) => {
 }
 
 export default Form
+
+
+export const createBoard = createSafeAction(CreateBoard, handler)
