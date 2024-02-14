@@ -1,5 +1,6 @@
 'use client'
 
+import { Input } from "@/components/ui/input"
 import { useFormStatus } from "react-dom"
 
 interface Props {
@@ -13,7 +14,7 @@ const FormInput = ({ errors }: Props) => {
 
 	return (
 		<div className=''>
-			<input
+			<Input
 				id='title'
 				name='title'
 				required
