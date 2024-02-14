@@ -1,13 +1,17 @@
 'use client'
 
-import { create } from '@/actions/createBoard'
+import { State, create } from '@/actions/createBoard'
 import { Button } from '@/components/ui/button'
+import { useFormState } from 'react-dom'
 
 type Props = {}
 
 const Form = (props: Props) => {
+    const initialState: State = {message: null, errors: {}}
+    const [state, dispatch] = useFormState(create, initialState)
+
 	return (
-		<form action={create}>
+		<form action={dispatch}>
 			<input
 				id='title'
 				name='title'

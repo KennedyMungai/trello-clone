@@ -17,10 +17,19 @@ const CreateBoard = z.object({
 		.min(3, { message: 'A minimum length of 3 letters is required' })
 })
 
-export async function create(formData: FormData) {
-	const { title } = CreateBoard.parse({
+export async function create(prevState: State, formData: FormData) {
+	const validatedFields = CreateBoard.safeParse({
 		title: formData.get('title')
 	})
+
+	if (!validatedFields!.success) {
+		return {
+			errors: validatedFields.error.flatten().fieldErrors,
+			message: 'Missing Fields'
+		}
+	}
+
+	const title = validatedFields.data.title
 
 	await db.board.create({
 		data: {
