@@ -5,7 +5,9 @@ import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 
 const CreateBoard = z.object({
-	title: z.string().min(1).max(100)
+	title: z
+		.string()
+		.min(3, { message: 'A minimum length of 3 letters is required' })
 })
 
 export async function create(formData: FormData) {
@@ -19,5 +21,5 @@ export async function create(formData: FormData) {
 		}
 	})
 
-    revalidatePath('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
+	revalidatePath('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
 }
