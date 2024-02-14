@@ -1,7 +1,7 @@
 type Props = {}
 
-const Input = (props: Props) => {
+const FormInput = (props: Props) => {
 	return <div>Input</div>
 }
 
-export default Input
+export default FormInput
