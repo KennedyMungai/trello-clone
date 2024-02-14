@@ -14,12 +14,7 @@ const Form = (props: Props) => {
 	return (
 		<form action={dispatch}>
 			<div className='flex flex-col space-y-2'>
-				<FormInput />
-				{state?.errors?.title?.map((error, index) => (
-					<p key={index} className='text-rose-500'>
-						{error}
-					</p>
-				))}
+				<FormInput errors={state.errors} />
 			</div>
 			<Button type='submit' className='mt-3'>
 				Submit
