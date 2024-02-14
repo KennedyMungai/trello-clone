@@ -2,6 +2,7 @@
 
 import db from '@/lib/db'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { z } from 'zod'
 
 export type State = {
@@ -31,11 +32,18 @@ export async function create(prevState: State, formData: FormData) {
 
 	const title = validatedFields.data.title
 
-	await db.board.create({
-		data: {
-			title
+	try {
+		await db.board.create({
+			data: {
+				title
+			}
+		})
+	} catch (error) {
+		return {
+			message: 'Database Error'
 		}
-	})
+	}
 
 	revalidatePath('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
+	redirect('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
 }
