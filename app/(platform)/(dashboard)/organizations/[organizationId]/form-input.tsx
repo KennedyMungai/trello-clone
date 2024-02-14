@@ -1,7 +1,7 @@
 'use client'
 
-import { Input } from "@/components/ui/input"
-import { useFormStatus } from "react-dom"
+import { Input } from '@/components/ui/input'
+import { useFormStatus } from 'react-dom'
 
 interface Props {
 	errors?: {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const FormInput = ({ errors }: Props) => {
-	const {pending} = useFormStatus()
+	const { pending } = useFormStatus()
 
 	return (
 		<div className=''>
@@ -19,7 +19,7 @@ const FormInput = ({ errors }: Props) => {
 				name='title'
 				required
 				placeholder='Enter a board title'
-				className='border border-black p-2 text-stone-500 font-semibold rounded-md'
+				className='p-2 text-stone-500 font-semibold rounded-md focus-visible:border-none'
 				disabled={pending}
 			/>
 			{errors?.title?.map((error, index) => (
