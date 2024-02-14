@@ -1,6 +1,7 @@
 'use client'
 
 import db from '@/lib/db'
+import { revalidatePath } from 'next/cache'
 
 export const deleteBoard = async (id: string) => {
 	await db.board.delete({
@@ -8,4 +9,6 @@ export const deleteBoard = async (id: string) => {
 			id
 		}
 	})
+
+	revalidatePath('/organizations/org_2cIyNRFX3Cb2tPdSJP7hm4bPvoc')
 }
