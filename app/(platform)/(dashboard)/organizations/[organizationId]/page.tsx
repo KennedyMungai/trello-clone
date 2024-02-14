@@ -6,7 +6,9 @@ const OrganizationPage = () => {
 
 		const title = formData.get('title') as string
 
-		db.board.create({
+		console.log('I got called')
+
+		await db.board.create({
 			data: {
 				title
 			}
