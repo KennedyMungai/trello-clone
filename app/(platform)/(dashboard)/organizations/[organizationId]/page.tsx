@@ -1,7 +1,21 @@
+import db from '@/lib/db'
+
 const OrganizationPage = () => {
+	async function create(formData: FormData) {
+		'use server'
+
+		const title = formData.get('title') as string
+
+		db.board.create({
+			data: {
+				title
+			}
+		})
+	}
+
 	return (
 		<div className='h-full'>
-			<form>
+			<form action={create}>
 				<input
 					id='title'
 					name='title'
