@@ -3,6 +3,7 @@
 import { State, create } from '@/actions/create-board'
 import { CreateBoard } from '@/actions/create-board/schema'
 import { Button } from '@/components/ui/button'
+import { useAction } from '@/hooks/use-action'
 import { createSafeAction } from '@/lib/create-safe-action'
 import { useFormState } from 'react-dom'
 import FormInput from './form-input'
@@ -13,10 +14,18 @@ const Form = (props: Props) => {
 	const initialState: State = { message: null, errors: {} }
 	const [state, dispatch] = useFormState(create, initialState)
 
+	const { execute, FieldErrors } = useAction(createBoard)
+
+	const onSubmit = (formData: FormData) => {
+		const title = formData.get('title') as string
+
+		execute({ title })
+	}
+
 	return (
-		<form action={dispatch}>
+		<form action={onSubmit}>
 			<div className='flex flex-col space-y-2'>
-				<FormInput errors={state.errors} />
+				<FormInput errors={FieldErrors} />
 			</div>
 			<Button type='submit' className='mt-3'>
 				Submit
@@ -26,6 +35,5 @@ const Form = (props: Props) => {
 }
 
 export default Form
-
 
 export const createBoard = createSafeAction(CreateBoard, handler)
