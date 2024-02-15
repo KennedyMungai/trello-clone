@@ -14,7 +14,14 @@ const Form = (props: Props) => {
 	const initialState: State = { message: null, errors: {} }
 	const [state, dispatch] = useFormState(create, initialState)
 
-	const { execute, FieldErrors } = useAction(createBoard)
+	const { execute, FieldErrors } = useAction(createBoard, {
+		onSuccess: (data) => {
+			console.log(data, 'SUCCESS!')
+		},
+		onError: (error) => {
+			console.log(error, 'ERROR!')
+		}
+	})
 
 	const onSubmit = (formData: FormData) => {
 		const title = formData.get('title') as string
